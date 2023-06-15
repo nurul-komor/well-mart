@@ -1,0 +1,5 @@
+@include('common.components.header')
+@yield('main')
+@include('common.components.preloader')
+@include('common.components.searchBox')
+@include('common.components.footer')

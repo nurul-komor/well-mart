@@ -1,0 +1,61 @@
+/* @import url("https://fonts.cdnfonts.com/css/helvetica-neue-9"); */
+@import url("https://fonts.googleapis.com/css2?family=Montserrat:wght@200;300;400;500;600;700;800;900&family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;1,100;1,200;1,300;1,400;1,500;1,600;1,700&family=Rozha+One&display=swap");
+
+@import url("https://fonts.googleapis.com/css2?family=Bruno+Ace+SC&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Raleway:wght@100;200;300;400;500;600;700;800;900&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Bagel+Fat+One&display=swap");
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer {
+    .font-logo {
+        font-family: "Bagel Fat One", cursive;
+        /* font-weight: "bolder"; */
+    }
+    .font-rozha {
+        font-family: "Rozha One", serif;
+    }
+    .font-helvetica {
+        font-family: "Helvetica 35 Thin", sans-serif;
+    }
+    .font-montserrat {
+        @apply font-normal;
+        /* font-family: "Montserrat", sans-serif; */
+        font-family: "Raleway", sans-serif;
+    }
+    .bg-dark {
+        @apply bg-[#252525];
+    }
+    .text-limit-1 {
+        overflow: hidden;
+        text-overflow: ellipsis;
+        display: -webkit-box;
+        -webkit-line-clamp: 1; /* Change the number to set a different maximum number of lines */
+        -webkit-box-orient: vertical;
+    }
+    .text-limit {
+        overflow: hidden;
+        text-overflow: ellipsis;
+        display: -webkit-box;
+        -webkit-line-clamp: 2; /* Change the number to set a different maximum number of lines */
+        -webkit-box-orient: vertical;
+    }
+
+    .chips {
+        @apply relative inline-block select-none whitespace-nowrap rounded-lg  py-2 px-3.5 align-baseline font-sans text-xs font-bold uppercase leading-none text-white;
+    }
+
+    /* .small-scrollbar { */
+    /* ===== Scrollbar CSS ===== */
+    /* Firefox */
+
+    /* Chrome, Edge, and Safari */
+
+    /* } */
+
+    em {
+        background: rgb(72, 232, 244);
+    }
+}
