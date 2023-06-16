@@ -12,6 +12,7 @@ return new class extends Migration {
     {
         Schema::table('products', function (Blueprint $table) {
             $table->string('total_visited')->default(0);
+            $table->string('vr_image')->nullable();
         });
     }
 
@@ -22,6 +23,7 @@ return new class extends Migration {
     {
         Schema::table('products', function (Blueprint $table) {
             $table->dropColumn('total_visited');
+            $table->dropColumn('vr_image');
         });
     }
 };

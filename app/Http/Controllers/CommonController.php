@@ -70,7 +70,13 @@ class CommonController extends Controller
         $data = compact('title', 'productCategories', 'product', 'relatedProducts');
         return view('common.single_product')->with($data);
     }
-
+    public function vrView($code)
+    {
+        $product = Products::where('product_code', $code)->first();
+        return view('common.single_product_vr', [
+            'product' => $product
+        ]);
+    }
     public function productsByCategory($category)
     {
         $title = "Products >" . $category;

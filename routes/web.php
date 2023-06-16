@@ -73,7 +73,8 @@ Route::group(['as' => 'common.'], function () {
     Route::get('/products', [CommonController::class, 'products'])->name('products');
     Route::get('/products/{category}', [CommonController::class, 'productsByCategory'])->name('productsByCategory');
     Route::get('/products/singleProduct/{code}', [CommonController::class, 'singleProduct'])->name('singleProduct');
-
+    // product vr
+    Route::get('/product/vr/{code}', [CommonController::class, 'vrVIew'])->name('product.vr');
     // add to cart product
     Route::post("addToCart", [AddToCartController::class, 'add'])->name('cart.add');
 

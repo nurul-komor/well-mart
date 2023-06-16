@@ -72,6 +72,16 @@
                                         <x-input-error :messages="$errors->get('profile2')" class="mt-2" />
                                     </div>
                                     <div class="relative mb-4">
+                                        <label for="var_image"
+                                            class="block text-sm font-medium text-gray-900 dark:text-white">VR Image
+                                            (gtlf formate only)
+                                        </label>
+                                        <input
+                                            class="block w-full text-sm text-gray-900 border border-gray-300 rounded-lg cursor-pointer bg-gray-50 dark:text-gray-400 focus:outline-none dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400"
+                                            id="var_image" type="file" name="vrImage">
+                                        <x-input-error :messages="$errors->get('vrImage')" class="mt-2" />
+                                    </div>
+                                    <div class="relative mb-4">
                                         <label for="product-brand"
                                             class="block text-sm font-medium text-gray-900 dark:text-white">Brand
                                             (optional)</label>

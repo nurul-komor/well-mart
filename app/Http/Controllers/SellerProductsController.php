@@ -42,8 +42,8 @@ class SellerProductsController extends Controller
      */
     public function store(Request $request)
     {
-
         $productCode = Str::uuid();
+
 
         $request->validate([
             'productName' => ['required', 'string', 'max:100', 'min:3'],
@@ -53,14 +53,16 @@ class SellerProductsController extends Controller
             'profile' => 'required|file|mimes:jpeg,png,gif,jpg',
             'profile2' => 'file|mimes:jpeg,png,gif,jgp',
             'quantity' => ['required'],
-
+            // 'vrImage' => ['mimes:gltf']
 
         ]);
 
         $destination1 = null;
         $destination2 = null;
+        $destination3 = null;
         $fileName1 = null;
         $fileName2 = null;
+        $fileName3 = null;
         if ($request->file('profile') != "") {
             $fileName1 = str_replace(" ", "_", $request->file('profile')->getClientOriginalName());
             $destination1 = "uploads/products/";
@@ -73,12 +75,19 @@ class SellerProductsController extends Controller
             $request->file('profile2')->move(public_path($destination2), $fileName2);
 
         }
+        if ($request->file('vrImage') != "") {
+            $fileName3 = time() . uniqid() . '.' . $request->file('vrImage')->getClientOriginalExtension();
+            $destination3 = "uploads/vr/";
+            $request->file('vrImage')->move(public_path($destination3), $fileName3);
+
+        }
 
         $product = Products::insert([
             'sellerId' => auth()->guard('seller')->user()->sellerCode,
             'productName' => $request->productName,
             'productImage' => $destination1 . $fileName1,
             'productImage2' => $destination2 . $fileName2,
+            'vr_image' => $destination3 . $fileName3,
             'description' => nl2br($request->description),
             'price' => $request->productPrice,
             'options' => json_encode($request->options),
@@ -138,8 +147,10 @@ class SellerProductsController extends Controller
         ]);
 
         $destination = null;
+        $destination3 = null;
         $fileName1 = null;
         $fileName2 = null;
+        $fileName3 = null;
 
         if ($request->file('profile') != null) {
             $fileName1 = str_replace(" ", "_", $request->file('profile')->getClientOriginalName());
@@ -157,6 +168,12 @@ class SellerProductsController extends Controller
                 'productImage2' => $destination . $fileName2,
             ]);
         }
+        // if ($request->file('vrImage') != "") {
+        //     $fileName3 = time() . uniqid() . '.' . $request->file('vrImage')->getClientOriginalExtension();
+        //     $destination3 = "uploads/vr/";
+        //     $request->file('vrImage')->move(public_path($destination3), $fileName3);
+
+        // }
 
         $product = DB::table("products")->where('id', $id)->update([
             'sellerId' => auth()->guard('seller')->user()->sellerCode,

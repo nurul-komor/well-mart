@@ -137,6 +137,30 @@
 <?php endif; ?>
                                     </div>
                                     <div class="relative mb-4">
+                                        <label for="var_image"
+                                            class="block text-sm font-medium text-gray-900 dark:text-white">VR Image
+                                            (gtlf formate only)
+                                        </label>
+                                        <input
+                                            class="block w-full text-sm text-gray-900 border border-gray-300 rounded-lg cursor-pointer bg-gray-50 dark:text-gray-400 focus:outline-none dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400"
+                                            id="var_image" type="file" name="vrImage">
+                                        <?php if (isset($component)) { $__componentOriginal71c6471fa76ce19017edc287b6f4508c = $component; } ?>
+<?php $component = Illuminate\View\AnonymousComponent::resolve(['view' => 'components.input-error','data' => ['messages' => $errors->get('vrImage'),'class' => 'mt-2']] + (isset($attributes) && $attributes instanceof Illuminate\View\ComponentAttributeBag ? (array) $attributes->getIterator() : [])); ?>
+<?php $component->withName('input-error'); ?>
+<?php if ($component->shouldRender()): ?>
+<?php $__env->startComponent($component->resolveView(), $component->data()); ?>
+<?php if (isset($attributes) && $attributes instanceof Illuminate\View\ComponentAttributeBag && $constructor = (new ReflectionClass(Illuminate\View\AnonymousComponent::class))->getConstructor()): ?>
+<?php $attributes = $attributes->except(collect($constructor->getParameters())->map->getName()->all()); ?>
+<?php endif; ?>
+<?php $component->withAttributes(['messages' => \Illuminate\View\Compilers\BladeCompiler::sanitizeComponentAttribute($errors->get('vrImage')),'class' => 'mt-2']); ?>
+<?php echo $__env->renderComponent(); ?>
+<?php endif; ?>
+<?php if (isset($__componentOriginal71c6471fa76ce19017edc287b6f4508c)): ?>
+<?php $component = $__componentOriginal71c6471fa76ce19017edc287b6f4508c; ?>
+<?php unset($__componentOriginal71c6471fa76ce19017edc287b6f4508c); ?>
+<?php endif; ?>
+                                    </div>
+                                    <div class="relative mb-4">
                                         <label for="product-brand"
                                             class="block text-sm font-medium text-gray-900 dark:text-white">Brand
                                             (optional)</label>

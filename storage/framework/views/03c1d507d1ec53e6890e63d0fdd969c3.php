@@ -146,8 +146,12 @@
                                 <?php endforeach; $__env->popLoop(); $loop = $__env->getLastLoop(); ?>
                             </ul>
                         <?php endif; ?>
-
-
+                        <?php if($product->product_code != null): ?>
+                            <div class="py-4">
+                                <a class="font-body underline "
+                                    href="<?php echo e(route('common.product.vr', ['code' => $product->product_code])); ?>">3D view</a>
+                            </div>
+                        <?php endif; ?>
                         <div class="flex w-full flex-col md:flex-row mt-4">
                             <div class="basis-full md:basis-[50%] p-4">
                                 <?php if($product->quantity > 4): ?>
@@ -158,6 +162,7 @@
                                         value="1" max="<?php echo e($product->quantity); ?>" min="1">
                                 <?php endif; ?>
                             </div>
+
                             <div class="basis-full md:basis-[50%] p-4">
                                 <input type="hidden" name="product_code" value="<?php echo e($product->product_code); ?>">
                                 <button class="btn" type="submit">Add To Cart</button>

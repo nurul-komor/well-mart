@@ -145,8 +145,12 @@
                                 @endforeach
                             </ul>
                         @endif
-
-
+                        @if ($product->product_code != null)
+                            <div class="py-4">
+                                <a class="font-body underline "
+                                    href="{{ route('common.product.vr', ['code' => $product->product_code]) }}">3D view</a>
+                            </div>
+                        @endif
                         <div class="flex w-full flex-col md:flex-row mt-4">
                             <div class="basis-full md:basis-[50%] p-4">
                                 @if ($product->quantity > 4)
@@ -157,6 +161,7 @@
                                         value="1" max="{{ $product->quantity }}" min="1">
                                 @endif
                             </div>
+
                             <div class="basis-full md:basis-[50%] p-4">
                                 <input type="hidden" name="product_code" value="{{ $product->product_code }}">
                                 <button class="btn" type="submit">Add To Cart</button>

@@ -122,44 +122,46 @@
                                             class="js-example-basic-multiple peer h-full w-full border-2 py-2 px-2 mt-1 rounded-md focus:ring-2 ring-slate-500 outline-none  placeholder:text-sm">
 
                                             <option value="" disabled>For cloths</option>
-                                            <option
-                                                {{ in_array('XS', json_decode($product->options)) ? 'selected' : '' }}
-                                                value="XS">XS
-                                            </option>
-                                            <option
-                                                {{ in_array('S', json_decode($product->options)) ? 'selected' : '' }}
-                                                value="S">S</option>
-                                            <option
-                                                {{ in_array('M', json_decode($product->options)) ? 'selected' : '' }}
-                                                value="M">M</option>
-                                            <option
-                                                {{ in_array('L', json_decode($product->options)) ? 'selected' : '' }}
-                                                value="L">L</option>
-                                            <option
-                                                {{ in_array('XL', json_decode($product->options)) ? 'selected' : '' }}
-                                                value="XL">XL</option>
-                                            <option
-                                                {{ in_array('XXL', json_decode($product->options)) ? 'selected' : '' }}
-                                                value="XXL">XXL</option>
-                                            <option
-                                                {{ in_array('XXXL', json_decode($product->options)) ? 'selected' : '' }}
-                                                value="XXXL">XXXL</option>
-
-                                            @foreach (json_decode($product->options) as $item)
-                                                @if (
-                                                    !(
-                                                        $item == 'XS' ||
-                                                        $item == 'S' ||
-                                                        $item == 'M' ||
-                                                        $item == 'L' ||
-                                                        $item == 'XL' ||
-                                                        $item == 'XXL' ||
-                                                        $item == 'XXXL'
-                                                    ))
-                                                    <option value="{{ $item }}" selected>{{ $item }}
-                                                    </option>
-                                                @endif
-                                            @endforeach
+                                            @if (json_decode($product->options) != null)
+                                                <option
+                                                    {{ in_array('XS', json_decode($product->options)) ? 'selected' : '' }}
+                                                    value="XS">XS
+                                                </option>
+                                                <option
+                                                    {{ in_array('S', json_decode($product->options)) ? 'selected' : '' }}
+                                                    value="S">S</option>
+                                                <option
+                                                    {{ in_array('M', json_decode($product->options)) ? 'selected' : '' }}
+                                                    value="M">M</option>
+                                                <option
+                                                    {{ in_array('L', json_decode($product->options)) ? 'selected' : '' }}
+                                                    value="L">L</option>
+                                                <option
+                                                    {{ in_array('XL', json_decode($product->options)) ? 'selected' : '' }}
+                                                    value="XL">XL</option>
+                                                <option
+                                                    {{ in_array('XXL', json_decode($product->options)) ? 'selected' : '' }}
+                                                    value="XXL">XXL</option>
+                                                <option
+                                                    {{ in_array('XXXL', json_decode($product->options)) ? 'selected' : '' }}
+                                                    value="XXXL">XXXL</option>
+                                                @foreach (json_decode($product->options) as $item)
+                                                    @if (
+                                                        !(
+                                                            $item == 'XS' ||
+                                                            $item == 'S' ||
+                                                            $item == 'M' ||
+                                                            $item == 'L' ||
+                                                            $item == 'XL' ||
+                                                            $item == 'XXL' ||
+                                                            $item == 'XXXL'
+                                                        ))
+                                                        <option value="{{ $item }}" selected>
+                                                            {{ $item }}
+                                                        </option>
+                                                    @endif
+                                                @endforeach
+                                            @endif
                                         </select>
 
                                         <x-input-error :messages="$errors->get('options')" class="mt-2" />

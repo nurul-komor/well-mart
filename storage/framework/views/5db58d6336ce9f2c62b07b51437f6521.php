@@ -229,52 +229,54 @@
                                             class="js-example-basic-multiple peer h-full w-full border-2 py-2 px-2 mt-1 rounded-md focus:ring-2 ring-slate-500 outline-none  placeholder:text-sm">
 
                                             <option value="" disabled>For cloths</option>
-                                            <option
-                                                <?php echo e(in_array('XS', json_decode($product->options)) ? 'selected' : ''); ?>
+                                            <?php if(json_decode($product->options) != null): ?>
+                                                <option
+                                                    <?php echo e(in_array('XS', json_decode($product->options)) ? 'selected' : ''); ?>
 
-                                                value="XS">XS
-                                            </option>
-                                            <option
-                                                <?php echo e(in_array('S', json_decode($product->options)) ? 'selected' : ''); ?>
+                                                    value="XS">XS
+                                                </option>
+                                                <option
+                                                    <?php echo e(in_array('S', json_decode($product->options)) ? 'selected' : ''); ?>
 
-                                                value="S">S</option>
-                                            <option
-                                                <?php echo e(in_array('M', json_decode($product->options)) ? 'selected' : ''); ?>
+                                                    value="S">S</option>
+                                                <option
+                                                    <?php echo e(in_array('M', json_decode($product->options)) ? 'selected' : ''); ?>
 
-                                                value="M">M</option>
-                                            <option
-                                                <?php echo e(in_array('L', json_decode($product->options)) ? 'selected' : ''); ?>
+                                                    value="M">M</option>
+                                                <option
+                                                    <?php echo e(in_array('L', json_decode($product->options)) ? 'selected' : ''); ?>
 
-                                                value="L">L</option>
-                                            <option
-                                                <?php echo e(in_array('XL', json_decode($product->options)) ? 'selected' : ''); ?>
+                                                    value="L">L</option>
+                                                <option
+                                                    <?php echo e(in_array('XL', json_decode($product->options)) ? 'selected' : ''); ?>
 
-                                                value="XL">XL</option>
-                                            <option
-                                                <?php echo e(in_array('XXL', json_decode($product->options)) ? 'selected' : ''); ?>
+                                                    value="XL">XL</option>
+                                                <option
+                                                    <?php echo e(in_array('XXL', json_decode($product->options)) ? 'selected' : ''); ?>
 
-                                                value="XXL">XXL</option>
-                                            <option
-                                                <?php echo e(in_array('XXXL', json_decode($product->options)) ? 'selected' : ''); ?>
+                                                    value="XXL">XXL</option>
+                                                <option
+                                                    <?php echo e(in_array('XXXL', json_decode($product->options)) ? 'selected' : ''); ?>
 
-                                                value="XXXL">XXXL</option>
+                                                    value="XXXL">XXXL</option>
+                                                <?php $__currentLoopData = json_decode($product->options); $__env->addLoop($__currentLoopData); foreach($__currentLoopData as $item): $__env->incrementLoopIndices(); $loop = $__env->getLastLoop(); ?>
+                                                    <?php if(
+                                                        !(
+                                                            $item == 'XS' ||
+                                                            $item == 'S' ||
+                                                            $item == 'M' ||
+                                                            $item == 'L' ||
+                                                            $item == 'XL' ||
+                                                            $item == 'XXL' ||
+                                                            $item == 'XXXL'
+                                                        )): ?>
+                                                        <option value="<?php echo e($item); ?>" selected>
+                                                            <?php echo e($item); ?>
 
-                                            <?php $__currentLoopData = json_decode($product->options); $__env->addLoop($__currentLoopData); foreach($__currentLoopData as $item): $__env->incrementLoopIndices(); $loop = $__env->getLastLoop(); ?>
-                                                <?php if(
-                                                    !(
-                                                        $item == 'XS' ||
-                                                        $item == 'S' ||
-                                                        $item == 'M' ||
-                                                        $item == 'L' ||
-                                                        $item == 'XL' ||
-                                                        $item == 'XXL' ||
-                                                        $item == 'XXXL'
-                                                    )): ?>
-                                                    <option value="<?php echo e($item); ?>" selected><?php echo e($item); ?>
-
-                                                    </option>
-                                                <?php endif; ?>
-                                            <?php endforeach; $__env->popLoop(); $loop = $__env->getLastLoop(); ?>
+                                                        </option>
+                                                    <?php endif; ?>
+                                                <?php endforeach; $__env->popLoop(); $loop = $__env->getLastLoop(); ?>
+                                            <?php endif; ?>
                                         </select>
 
                                         <?php if (isset($component)) { $__componentOriginal71c6471fa76ce19017edc287b6f4508c = $component; } ?>
