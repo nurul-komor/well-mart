@@ -29,7 +29,9 @@
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/wowjs@1.1.3/css/libs/animate.min.css">
     {{-- rangbar css  --}}
     <link rel="stylesheet" href="{{ asset('common/css/rangebar.css') }}">
-    @vite(['resources/css/app.css', 'resources/js/app.js'])
+    {{-- @vite(['resources/css/app.css', 'resources/js/app.js']) --}}
+    <link rel="stylesheet" href="{{ asset('build/assets/app-0cca5b92.css') }}">
+    <script src="{{ asset('build/assets/app-b5a11a08.js') }}"></script>
 
     {{-- custom css  --}}
     <link rel="stylesheet" href="{{ asset('common/css/custom.css') }}">

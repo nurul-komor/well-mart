@@ -14,7 +14,11 @@
 
     <!-- Scripts -->
     <link href="https://cdnjs.cloudflare.com/ajax/libs/flowbite/1.6.5/flowbite.min.css" rel="stylesheet" />
-    @vite(['resources/css/app.css', 'resources/js/app.js'])
+    {{-- {{-- @vite(['resources/css/app.css', 'resources/js/app.js']) --}}
+    <link rel="stylesheet" href="{{ asset('build/assets/app-0cca5b92.css') }}">
+    <script src="{{ asset('build/assets/app-b5a11a08.js') }}"></script> --}}
+    <link rel="stylesheet" href="{{ asset('build/assets/app-0cca5b92.css') }}">
+    <script src="{{ asset('build/assets/app-b5a11a08.js') }}"></script>
 </head>
 
 <body class="font-body text-gray-900 antialiased">

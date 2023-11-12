@@ -42,7 +42,9 @@ use App\Providers\RouteServiceProvider;
     <link href="{{ asset('admin/assets/css/argon-dashboard-tailwind.css?v=1.0.1') }}" rel="stylesheet" />
     <link rel="stylesheet" href="{{ asset('admin/assets/css/custom.css') }}">
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/tw-elements/dist/css/tw-elements.min.css" />
-    @vite(['resources/css/app.css', 'resources/js/app.js'])
+    {{-- @vite(['resources/css/app.css', 'resources/js/app.js']) --}}
+    <link rel="stylesheet" href="{{ asset('build/assets/app-0cca5b92.css') }}">
+    <script src="{{ asset('build/assets/app-b5a11a08.js') }}"></script>
     @stack('outletcss')
 </head>
 
