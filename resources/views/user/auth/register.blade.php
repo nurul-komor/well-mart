@@ -27,7 +27,7 @@
                 <div class="mt-4">
                     <x-input-label for="data" :value="__('Date of birth')" />
                     <input
-                        class='border-gray-300 dark:border-gray-700 dark:bg-gray-900 dark:text-gray-300 focus:border-indigo-500 dark:focus:border-indigo-600 focus:ring-indigo-500 dark:focus:ring-indigo-600 rounded-md shadow-sm w-full'
+                        class='border-gray-300 focus:border-indigo-500 focus:ring-indigo-500 rounded-md shadow-sm w-full'
                         type="date" name="dob">
                     <x-input-error :messages="$errors->get('dob')" class="mt-2" />
                 </div>
@@ -38,7 +38,7 @@
                 <div class="mt-4 md:mt-[2.1px]">
                     <x-input-label for="gender" :value="__('Gender')" />
                     <select id="gender" name="gender"
-                        class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500">
+                        class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5">
                         <option value="">Choose a gender</option>
                         <option value="male">Male</option>
                         <option value="female">Female</option>
@@ -50,7 +50,7 @@
                 <div class="mt-4">
                     <x-input-label for="image" :value="__('Image')" />
                     <input
-                        class="block w-full text-sm text-gray-900 border border-gray-300 rounded-lg cursor-pointer bg-gray-50 dark:text-gray-400 focus:outline-none dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400"
+                        class="block w-full text-sm text-gray-900 border border-gray-300 rounded-lg cursor-pointer bg-gray-50 focus:outline-none"
                         id="image" type="file" name="image">
                     <x-input-error :messages="$errors->get('image')" class="mt-2" />
                 </div>
@@ -82,13 +82,13 @@
             <x-input-label for="address" :value="__('Address')" />
 
             <textarea id="address" rows="4" name="address"
-                class="block p-2.5 w-full text-sm text-gray-900 bg-gray-50 rounded-lg border border-gray-300 focus:ring-blue-500 focus:border-blue-500 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500"
+                class="block p-2.5 w-full text-sm text-gray-900 bg-gray-50 rounded-lg border border-gray-300 focus:ring-blue-500 focus:border-blue-500"
                 placeholder="Your address here"></textarea>
 
             <x-input-error :messages="$errors->get('address')" class="mt-2" />
         </div>
         <div class="flex items-center justify-end mt-4">
-            <a class="underline text-sm text-gray-600 dark:text-gray-400 hover:text-gray-900 dark:hover:text-gray-100 rounded-md focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-indigo-500 dark:focus:ring-offset-gray-800"
+            <a class="underline text-sm text-gray-600 hover:text-gray-900 rounded-md focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-indigo-500"
                 href="{{ route('login') }}">
                 {{ __('Already registered?') }}
             </a>

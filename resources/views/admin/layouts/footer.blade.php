@@ -20,7 +20,7 @@
 <script src="{{ asset('admin/assets/js/plugins/perfect-scrollbar.min.js') }}" type="module" async></script>
 
 {{-- tailwind element  --}}
-<script type="text/javascript" src="../node_modules/tw-elements/dist/js/tw-elements.umd.min.js"></script>
+{{-- <script type="text/javascript" src="../node_modules/tw-elements/dist/js/tw-elements.umd.min.js"></script> --}}
 
 {{-- dropdown js  --}}
 <script src="{{ asset('admin/assets/js/dropdown.js') }}"></script>

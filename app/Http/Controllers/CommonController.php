@@ -19,6 +19,7 @@ class CommonController extends Controller
         $productCategories = ProductCategories::with('getProducts')->where('status', 1)->latest()->take(6)->get();
 
         $data = compact('productCategories', 'news');
+    
         return view('common.index')->with($data);
     }
     public function products()

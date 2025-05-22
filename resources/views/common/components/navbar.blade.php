@@ -95,7 +95,7 @@
                  <div class="relative">
                      <ion-icon name="bag-handle-outline"></ion-icon>
                      <small
-                         class="top-0 left-5 absolute  px-1 bg-green-400 border-2 border-white dark:border-gray-800 rounded-full text-xs text-white font-poppins">{{ collect(session('cart'))->count() }}</small>
+                         class="top-0 left-5 absolute  px-1 bg-green-400 border-2 border-white rounded-full text-xs text-white font-poppins">{{ collect(session('cart'))->count() }}</small>
                  </div>
              </a>
              {{-- <a href="" class="text-3xl font-bold px-2 hover:text-commonPrimary duration-75">
@@ -116,7 +116,7 @@
              <div class="absolute left-5 top-0 lg:hidden">
                  @if (Route::is('common.products') || Route::is('common.productsByCategory'))
                      <button
-                         class="text-slate-400 text-2xl font-bold focus:ring-1 focus:ring-slate-300  rounded-lg px-5 py-2.5   focus:outline-none dark:focus:ring-slate-800 inline-block"
+                         class="text-slate-400 text-2xl font-bold focus:ring-1 focus:ring-slate-300  rounded-lg px-5 py-2.5   focus:outline-none inline-block"
                          type="button" data-drawer-target="drawer-range" data-drawer-show="drawer-range"
                          aria-controls="drawer-range">
                          <ion-icon name="menu-outline"></ion-icon>
@@ -127,7 +127,7 @@
              <div class="absolute right-5 top-0 md:hidden">
                  <div class="dropdown dropdown-end">
                      <label tabindex="0"
-                         class=" text-slate-400 text-2xl font-bold focus:ring-1 focus:ring-slate-300  rounded-lg px-5 py-2.5   focus:outline-none dark:focus:ring-slate-800 inline-block ">
+                         class=" text-slate-400 text-2xl font-bold focus:ring-1 focus:ring-slate-300  rounded-lg px-5 py-2.5   focus:outline-none inline-block ">
                          <ion-icon name="menu-outline"></ion-icon>
                      </label>
                      <ul tabindex="0" class="dropdown-content menu p-2 shadow bg-base-100 rounded-box w-52">

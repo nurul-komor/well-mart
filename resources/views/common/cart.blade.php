@@ -32,8 +32,8 @@
                         </div>
                     @endif
                     <div class="relative overflow-x-auto shadow-md sm:rounded-lg">
-                        <table id="cartProducts" class="w-full text-sm text-left text-gray-500 dark:text-gray-400">
-                            <thead class="text-xs text-gray-700 uppercase bg-gray-50 dark:bg-gray-700 dark:text-gray-400">
+                        <table id="cartProducts" class="w-full text-sm text-left text-gray-500">
+                            <thead class="text-xs text-gray-700 uppercase bg-gray-50">
                                 <tr>
                                     <th scope="col" class="px-6 py-3">
                                         <span class="sr-only">Image</span>
@@ -206,20 +206,20 @@
                             $.each(response.products, function(i, item) {
 
                                 html += `
-                                <tr class=" border-b dark:bg-gray-800 dark:border-gray-700 hover:bg-gray-50 dark:hover:bg-gray-600">
+                                <tr class=" border-b hover:bg-gray-50">
                                             <td class="w-32 p-4">
                                                 <div class="flex justify-center">
                                                     <img src="${appUrl}/${item.image}"
                                                         alt="Apple Watch" class="object-cover max-h-[79px] max-w-[79px]">
                                                 </div>
                                             </td>
-                                            <td class="px-6 py-4 font-semibold text-gray-900 dark:text-white">
+                                            <td class="px-6 py-4 font-semibold text-gray-900">
                                                 ${item.name}
                                             </td>
                                             <td class="px-6 py-4">
                                                 <div class="flex items-center space-x-3">
                                                     <button data-id="${item.code}"
-                                                        class="inline-flex items-center p-1 text-sm font-medium text-gray-500 bg-white border border-gray-300 rounded-full focus:outline-none hover:bg-gray-100 focus:ring-4 focus:ring-gray-200 dark:bg-gray-800 dark:text-gray-400 dark:border-gray-600 dark:hover:bg-gray-700 dark:hover:border-gray-600 dark:focus:ring-gray-700 decrementer"
+                                                        class="inline-flex items-center p-1 text-sm font-medium text-gray-500 bg-white border border-gray-300 rounded-full focus:outline-none hover:bg-gray-100 focus:ring-4 focus:ring-gray-200 decrementer"
                                                         type="button">
                                                         <span class="sr-only">Quantity button</span>
                                                         <svg class="w-4 h-4" aria-hidden="true" fill="currentColor"
@@ -231,13 +231,13 @@
                                                     </button>
                                                     <div>
                                                         <input type="number" id="quantity"${item.code}"
-                                                            class="bg-gray-50 w-14 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block px-2.5 py-1 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500"
+                                                            class="bg-gray-50 w-14 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block px-2.5 py-1"
                                                             placeholder="1" min="1" max="5" readonly required
                                                             value="${item.quantity}">
 
                                                     </div>
                                                     <button data-id="${item.code}"
-                                                        class="inline-flex items-center p-1 text-sm font-medium text-gray-500 bg-white border border-gray-300 rounded-full focus:outline-none hover:bg-gray-100 focus:ring-4 focus:ring-gray-200 dark:bg-gray-800 dark:text-gray-400 dark:border-gray-600 dark:hover:bg-gray-700 dark:hover:border-gray-600 dark:focus:ring-gray-700  incrementer"
+                                                        class="inline-flex items-center p-1 text-sm font-medium text-gray-500 bg-white border border-gray-300 rounded-full focus:outline-none hover:bg-gray-100 focus:ring-4 focus:ring-gray-200  incrementer"
                                                         type="button">
                                                         <span class="sr-only">Quantity button</span>
                                                         <svg class="w-4 h-4" aria-hidden="true" fill="currentColor"
@@ -250,13 +250,13 @@
                                                 </div>
                                             </td>
                                             <td id=""
-                                                class="px-2 py-4 font-semibold text-gray-900 dark:text-white ">
+                                                class="px-2 py-4 font-semibold text-gray-900 ">
 
                                                  BDT ${(item.price * item.quantity).toFixed(2)} +  50
                                             </td>
                                             <td class="px-6 py-4">
                                                 <a href="/cart/${item.code}"
-                                                    class="font-medium text-red-600 dark:text-red-500 hover:underline">Remove</a>
+                                                    class="font-medium text-red-600 hover:underline">Remove</a>
                                             </td>
                                         </tr>
                                 `

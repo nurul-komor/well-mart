@@ -2,8 +2,7 @@ const plugin = require("tailwindcss/plugin");
 
 module.exports = {
     mode: "jit",
-
-     darkMode: false,
+     darkMode: "class",
     content: [
         "./resources/**/*.blade.php",
         "./resources/**/**/*.blade.php",
@@ -1501,7 +1500,7 @@ module.exports = {
                 }),
             });
         }),
-        require("tw-elements/dist/plugin.cjs"),
+        // require("tw-elements/dist/plugin.cjs"),
         require("flowbite/plugin"),
         require("daisyui"),
     ],

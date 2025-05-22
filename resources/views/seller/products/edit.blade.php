@@ -1,14 +1,14 @@
 <x-seller-app-layout>
     <x-slot name="header">
-        <h2 class="font-semibold text-xl text-gray-800 dark:text-gray-200 leading-tight">
+        <h2 class="font-semibold text-xl text-gray-800 leading-tight">
             {{ __(' Products') }}
         </h2>
     </x-slot>
 
     <div class="py-12">
         <div class="max-w-7xl mx-auto sm:px-6 lg:px-8">
-            <div class="bg-white dark:bg-gray-800 overflow-hidden shadow-sm sm:rounded-lg">
-                <div class="p-6 text-gray-900 dark:text-gray-100">
+            <div class="bg-white overflow-hidden shadow-sm sm:rounded-lg">
+                <div class="p-6 text-gray-900">
                     <div class="flex justify-between flex-wrap">
                         <h5>
                             Create Products
@@ -27,7 +27,7 @@
                                 <div class="basis-full md:basis-[50%] px-4">
                                     <div class="relative mb-4">
                                         <label for="product-name"
-                                            class="block text-sm font-medium text-gray-900 dark:text-white">Product
+                                            class="block text-sm font-medium text-gray-900">Product
                                             Name</label>
                                         <input id="product-name"
                                             class="peer h-full w-full border-2 py-2 px-2 mt-1 rounded-md focus:ring-2 ring-slate-500 outline-none  placeholder:text-sm"
@@ -38,10 +38,10 @@
                                     </div>
                                     <div class="relative mb-4">
                                         <label for="category"
-                                            class="block  text-sm font-medium text-gray-900 dark:text-white">Select an
+                                            class="block  text-sm font-medium text-gray-900">Select an
                                             category</label>
                                         <select id="category"
-                                            class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-slate-500 focus:border-slate-500 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-slate-500 dark:focus:border-slate-500"
+                                            class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-slate-500 focus:border-slate-500 block w-full p-2.5"
                                             name="category">
                                             <option selected value="">Choose a category</option>
                                             @foreach ($categories as $category)
@@ -57,29 +57,29 @@
                                     </div>
                                     <div class="relative mb-4">
                                         <label for="file_input1"
-                                            class="block text-sm font-medium text-gray-900 dark:text-white">Profile
+                                            class="block text-sm font-medium text-gray-900">Profile
                                             Photo 1
                                         </label>
                                         <input
-                                            class="block w-full text-sm text-gray-900 border border-gray-300 rounded-lg cursor-pointer bg-gray-50 dark:text-gray-400 focus:outline-none dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400"
+                                            class="block w-full text-sm text-gray-900 border border-gray-300 rounded-lg cursor-pointer bg-gray-50 focus:outline-none"
                                             id="file_input1" type="file" name="profile">
 
                                         <x-input-error :messages="$errors->get('profile')" class="mt-2" />
                                     </div>
                                     <div class="relative mb-4">
                                         <label for="file_input2"
-                                            class="block text-sm font-medium text-gray-900 dark:text-white">Profile
+                                            class="block text-sm font-medium text-gray-900">Profile
                                             Photo 2
                                             (Optional)
                                         </label>
                                         <input
-                                            class="block w-full text-sm text-gray-900 border border-gray-300 rounded-lg cursor-pointer bg-gray-50 dark:text-gray-400 focus:outline-none dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400"
+                                            class="block w-full text-sm text-gray-900 border border-gray-300 rounded-lg cursor-pointer bg-gray-50 focus:outline-none"
                                             id="file_input2" type="file" name="profile2">
                                         <x-input-error :messages="$errors->get('profile2')" class="mt-2" />
                                     </div>
                                     <div class="relative mb-4">
                                         <label for="product-brand"
-                                            class="block text-sm font-medium text-gray-900 dark:text-white">Brand
+                                            class="block text-sm font-medium text-gray-900">Brand
                                             (optional)</label>
                                         <input id="product-brand"
                                             class="peer h-full w-full border-2 py-2 px-2 mt-1 rounded-md focus:ring-2 ring-slate-500 outline-none  placeholder:text-sm"
@@ -93,7 +93,7 @@
                                 <div class="basis-full md:basis-[50%] px-4">
                                     <div class="relative mb-4">
                                         <label for="product-price"
-                                            class="block text-sm font-medium text-gray-900 dark:text-white">Product
+                                            class="block text-sm font-medium text-gray-900">Product
                                             Price ($)</label>
                                         <input id="product-price"
                                             class="peer h-full w-full border-2 py-2 px-2 mt-1 rounded-md focus:ring-2 ring-slate-500 outline-none  placeholder:text-sm"
@@ -103,7 +103,7 @@
                                     </div>
                                     <div class="relative mb-4">
                                         <label for="quantity"
-                                            class="block text-sm font-medium text-gray-900 dark:text-white">Quantity
+                                            class="block text-sm font-medium text-gray-900">Quantity
                                             (pcs)</label>
                                         <input id="quantity"
                                             class="peer h-full w-full border-1 border-gray-300 py-2 px-2 mt-1 rounded-md focus:ring-2 ring-slate-500 outline-none  placeholder:text-sm"
@@ -114,7 +114,7 @@
                                     </div>
                                     <div class="relative mb-4">
                                         <label for="options"
-                                            class="block text-sm font-medium text-gray-900 dark:text-white">Options
+                                            class="block text-sm font-medium text-gray-900">Options
                                             (eg:"M" for
                                             Shirt, 28 from Pant etc.)
                                         </label>
@@ -168,13 +168,13 @@
                                     </div>
                                     <div class="relative mb-4">
                                         <label for="colorInput"
-                                            class="block text-sm font-medium text-gray-900 dark:text-white">Colors
+                                            class="block text-sm font-medium text-gray-900">Colors
                                         </label>
                                         <div id="colorContainer" class="opacity-0 "></div>
                                         <div id="colorPicker"></div>
 
                                         <label for="colorInput"
-                                            class="block text-sm font-medium text-gray-900 dark:text-white">Selected
+                                            class="block text-sm font-medium text-gray-900">Selected
                                             Colors
                                         </label>
                                         <div class="flex flex-wrap" id="selectedColors">
@@ -206,7 +206,7 @@
                                     </div>
                                     <div class="relative mb-4">
                                         <label for="discount"
-                                            class="block text-sm font-medium text-gray-900 dark:text-white">Discount
+                                            class="block text-sm font-medium text-gray-900">Discount
                                             (%)</label>
                                         <input id="discount"
                                             class="peer h-full w-full border-1 border-gray-300 py-2 px-2 mt-1 rounded-md focus:ring-2 ring-slate-500 outline-none  placeholder:text-sm"
@@ -223,7 +223,7 @@
                             <div class="px-4">
                                 <div class="relative mb-4">
                                     <label for="description"
-                                        class="block text-sm font-medium text-gray-900 dark:text-white">Description
+                                        class="block text-sm font-medium text-gray-900">Description
                                     </label>
                                     <textarea
                                         class="peer h-full w-full border-2 py-2 px-2 mt-1 rounded-md focus:ring-1 ring-slate-500 outline-none  placeholder:text-sm border-gray-200"

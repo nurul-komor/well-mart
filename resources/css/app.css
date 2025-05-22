@@ -58,4 +58,7 @@
     em {
         background: rgb(72, 232, 244);
     }
+    .input{
+        background-color: white !important;
+    }
 }

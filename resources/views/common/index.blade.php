@@ -204,11 +204,12 @@
             <ul class="flex flex-wrap items-center justify-center -mb-px text-sm font-montserrat text-center" id="myTab"
                 data-tabs-toggle="#myTabContent" role="tablist">
                 @if ($productCategories != null)
-                    @foreach ($productCategories as $item)
+                @foreach ($productCategories as $item)
+
                         @if ($item->getProducts->count())
                             <li class="mr-2 font-bold" role="presentation">
                                 <button class="inline-block p-4" id="profile-tab"
-                                    data-tabs-target="#{{ str_replace(' ', '_', $item->categoryName) }}" type="button"
+                                    data-tabs-target="#{{ get_slug($item->categoryName) }}" type="button"
                                     role="tab" aria-controls="profile"
                                     aria-selected="false">{{ $item->categoryName }}</button>
                             </li>
@@ -225,7 +226,7 @@
         <div id="myTabContent" class="md:max-w-[1300px] mx-auto">
             @if ($productCategories != null)
                 @foreach ($productCategories as $item)
-                    <div class="hidden p-4 " id="{{ str_replace(' ', '_', $item->categoryName) }}" role="tabpanel"
+                    <div class="hidden p-4 " id="{{ get_slug($item->categoryName) }}" role="tabpanel"
                         aria-labelledby="profile-tab">
                         <div
                             class="grid gird-flow-rows grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 xl:grid-cols-5">
@@ -246,7 +247,7 @@
                                             ]) }}">
                                             <div
                                                 class="h-[200px] inline-block w-full cursor-zoom-in  bg-cover   bg-center duration-125">
-                                                <img loading="lazy" src="{{ asset($product->productImage) }}"
+                                                <img loading="lazy" src="{{ get_image_url($product->productImage) }}"
                                                     class="max-h-[200px] w-full object-contain" alt=""
                                                     loading="lazy">
 

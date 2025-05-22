@@ -1,16 +1,16 @@
 <x-seller-app-layout>
     <x-slot name="header">
-        <h2 class="font-semibold text-xl text-gray-800 dark:text-gray-200 leading-tight">
+        <h2 class="font-semibold text-xl text-gray-800 leading-tight">
             {{ __(' Products') }}
         </h2>
     </x-slot>
     <div class="fixed bottom-5 right-5 z-50">
         @if (session('success'))
             <div id="toast-success"
-                class="flex items-center w-full max-w-xs p-4 mb-4 text-gray-500 bg-white rounded-lg shadow dark:text-gray-400 dark:bg-gray-800"
+                class="flex items-center w-full max-w-xs p-4 mb-4 text-gray-500 bg-white rounded-lg shadow"
                 role="alert">
                 <div
-                    class="inline-flex items-center justify-center flex-shrink-0 w-8 h-8 text-green-500 bg-green-100 rounded-lg dark:bg-green-800 dark:text-green-200">
+                    class="inline-flex items-center justify-center flex-shrink-0 w-8 h-8 text-green-500 bg-green-100 rounded-lg">
                     <svg aria-hidden="true" class="w-5 h-5" fill="currentColor" viewBox="0 0 20 20"
                         xmlns="http://www.w3.org/2000/svg">
                         <path fill-rule="evenodd"
@@ -21,7 +21,7 @@
                 </div>
                 <div class="ml-3 text-sm font-normal">{{ session('success') }}</div>
                 <button type="button"
-                    class="ml-auto -mx-1.5 -my-1.5 bg-white text-gray-400 hover:text-gray-900 rounded-lg focus:ring-2 focus:ring-gray-300 p-1.5 hover:bg-gray-100 inline-flex h-8 w-8 dark:text-gray-500 dark:hover:text-white dark:bg-gray-800 dark:hover:bg-gray-700"
+                    class="ml-auto -mx-1.5 -my-1.5 bg-white text-gray-400 hover:text-gray-900 rounded-lg focus:ring-2 focus:ring-gray-300 p-1.5 hover:bg-gray-100 inline-flex h-8 w-8"
                     data-dismiss-target="#toast-success" aria-label="Close">
                     <span class="sr-only">Close</span>
                     <svg aria-hidden="true" class="w-5 h-5" fill="currentColor" viewBox="0 0 20 20"
@@ -36,8 +36,8 @@
     </div>
     <div class="py-12">
         <div class="max-w-7xl mx-auto sm:px-6 lg:px-8">
-            <div class="bg-white dark:bg-gray-800 overflow-hidden shadow-sm sm:rounded-lg">
-                <div class="p-6 text-gray-900 dark:text-gray-100">
+            <div class="bg-white overflow-hidden shadow-sm sm:rounded-lg">
+                <div class="p-6 text-gray-900">
                     <div class="flex justify-between flex-wrap">
                         <h5>
                             Products
@@ -47,9 +47,9 @@
                     <div class="p-4 py-6">
 
                         <div class="relative sm:rounded-lg">
-                            <table class="w-full overflow-x-auto text-sm text-left text-gray-500 dark:text-gray-400">
+                            <table class="w-full overflow-x-auto text-sm text-left text-gray-500">
                                 <thead
-                                    class="text-xs text-gray-700 uppercase bg-gray-50 dark:bg-gray-700 dark:text-gray-400">
+                                    class="text-xs text-gray-700 uppercase bg-gray-50">
                                     <tr>
                                         <th scope="col" class="px-6 py-3">
                                             #
@@ -96,13 +96,13 @@
                                     @endphp
                                     @foreach ($products as $product)
                                         <tr
-                                            class="bg-white border-b-2 dark:bg-gray-800 dark:border-gray-700 hover:bg-gray-50 dark:hover:bg-gray-600">
+                                            class="bg-white border-b-2 hover:bg-gray-50">
                                             <th scope="row"
-                                                class="px-6 py-8 font-medium text-gray-900 whitespace-nowrap dark:text-white">
+                                                class="px-6 py-8 font-medium text-gray-900 whitespace-nowrap">
                                                 {{ $i++ }}
                                             </th>
                                             <th scope="row"
-                                                class="px-6 py-8 font-medium text-gray-900 whitespace-nowrap dark:text-white">
+                                                class="px-6 py-8 font-medium text-gray-900 whitespace-nowrap">
                                                 @if ($product->status == 1)
                                                     <p
                                                         class="p-1 text-white text-sm font-medium bg-green-300 text-center rounded">
@@ -121,11 +121,11 @@
                                                 @endif
                                             </th>
                                             <th scope="row"
-                                                class="px-6 py-8 font-medium text-gray-900 whitespace-nowrap dark:text-white">
+                                                class="px-6 py-8 font-medium text-gray-900 whitespace-nowrap">
                                                 {{ $product->productName }}
                                             </th>
                                             <th scope="row"
-                                                class="px-6 py-8 font-medium text-gray-900 whitespace-nowrap dark:text-white">
+                                                class="px-6 py-8 font-medium text-gray-900 whitespace-nowrap">
                                                 {{ $product->quantity }}
                                             </th>
 
@@ -183,7 +183,7 @@
                                                     <a href="{{ route('seller.products.edit', [
                                                         'product' => $product->id,
                                                     ]) }}"
-                                                        class="font-medium text-blue-600 dark:text-blue-500 hover:underline">Edit</a>
+                                                        class="font-medium text-blue-600 hover:underline">Edit</a>
 
                                                     <form
                                                         action="{{ route('seller.products.destroy', [
@@ -194,7 +194,7 @@
                                                         @method('DELETE')
                                                         <button type="submit"
                                                             onclick="return confirm('do you want to delete this product?')"
-                                                            class="font-medium text-blue-600 dark:text-blue-500 hover:underline">Delete</button>
+                                                            class="font-medium text-blue-600 hover:underline">Delete</button>
                                                     </form>
 
                                                 </div>

@@ -8,7 +8,7 @@
                         document.write(new Date().getFullYear() + ",");
                     </script>
                     All right reserved by <i class="fa fa-heart"></i> by
-                    <a href="{{ route('home') }}" class="font-semibold dark:text-white text-slate-700"
+                    <a href="{{ route('home') }}" class="font-semibold text-slate-700"
                         target="_blank">{{ config('app.name') }}</a>
 
                 </div>

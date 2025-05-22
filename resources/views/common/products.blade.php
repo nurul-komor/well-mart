@@ -18,8 +18,8 @@
                                     'code' => $product->product_code,
                                 ]) }}">
                                 <div class="h-[200px] inline-block w-full cursor-zoom-in  bg-cover   bg-center duration-125">
-                                    <img src="{{ asset($product->productImage) }}" class="max-h-[200px] w-full object-contain"
-                                        alt="" loading="lazy">
+                                    <img src="{{ get_image_url($product->productImage) }}"
+                                        class="max-h-[200px] w-full object-contain" alt="" loading="lazy">
 
                                 </div>
                                 <div class="label flex flex-col items-center">
@@ -100,6 +100,16 @@
 
         let productContainer = $("#productsContainer")
 
+        function getImageUrl(path) {
+            // Check if it's already an absolute URL
+            if (/^(http:\/\/|https:\/\/|\/\/)/i.test(path)) {
+                return path;
+            }
+
+            // Otherwise, prepend the app URL
+            return `${appUrl.replace(/\/+$/, '')}/${path.replace(/^\/+/, '')}`;
+        }
+
         function getProducts(selctor, min, max) {
             $.ajax({
                 url: "/api/products/" + selctor + "/" + min + "/" + max + "/" + null,
@@ -120,7 +130,7 @@
                         href="/products/singleProduct/${product.product_code}">
                         <div
                             class="h-[200px] inline-block w-full cursor-zoom-in  bg-cover   bg-center duration-125">
-                             <img src="${appUrl}/${product.productImage}"
+                             <img src="${getImageUrl(product.productImage)}"
                           class="max-h-[200px] w-full object-contain" alt="" loading="lazy">
 
                         </div>

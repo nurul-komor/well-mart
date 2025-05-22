@@ -6,9 +6,9 @@
         <div class="flex-none w-full max-w-full px-3">
 
             <div
-                class="relative flex flex-col min-w-0 mb-6 break-words bg-white border-0 border-transparent border-solid shadow-xl dark:bg-slate-850 dark:shadow-dark-xl rounded-2xl bg-clip-border">
+                class="relative flex flex-col min-w-0 mb-6 break-words bg-white border-0 border-transparent border-solid shadow-xl rounded-2xl bg-clip-border">
                 <div class="p-6 pb-0 mb-0 border-b-0 border-b-solid rounded-t-2xl border-b-transparent flex justify-between">
-                    <h6 class="dark:text-white">Edit Category</h6>
+                    <h6 class="">Edit Category</h6>
 
                     <div>
                         <a class="py-2 px-3 text-white rounded bg-blue-500"
