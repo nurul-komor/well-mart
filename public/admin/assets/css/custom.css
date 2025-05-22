@@ -1,0 +1,22 @@
+/* Set the width and height of the scrollbar */
+#sidebar::-webkit-scrollbar {
+    width: 5px;
+    height: 10px;
+    display: none;
+}
+
+/* Add background color to the scrollbar */
+#sidebar::-webkit-scrollbar-track {
+    background-color: #f1f1f1;
+}
+
+/* Add color to the scrollbar thumb */
+#sidebar::-webkit-scrollbar-thumb {
+    background-color: #cfcfcf;
+    border-radius: 5px;
+}
+
+/* Add hover effect to the scrollbar thumb */
+#sidebar::-webkit-scrollbar-thumb:hover {
+    background-color: #9b9999;
+}

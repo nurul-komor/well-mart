@@ -1,0 +1,225 @@
+/* -------------------------------------------------------------------------- */
+/*                           custom css for userside                          */
+/* -------------------------------------------------------------------------- */
+body {
+    overflow-x: hidden;
+}
+
+/* selection css  */
+::selection {
+    background-color: rgb(29, 175, 53); /* Red */
+    color: #ffffff; /* White */
+}
+/* selection css  */
+
+/* scrollbar css  */
+
+::-webkit-scrollbar-track {
+    -webkit-box-shadow: inset 0 0 6px rgba(0, 0, 0, 0.3);
+    background-color: #f5f5f5;
+}
+
+::-webkit-scrollbar {
+    width: 10px;
+    background-color: #f5f5f5;
+}
+
+::-webkit-scrollbar-thumb {
+    background-color: rgb(29, 175, 53);
+    background-image: -webkit-linear-gradient(
+        45deg,
+        rgba(255, 255, 255, 0.2) 25%,
+        transparent 25%,
+        transparent 50%,
+        rgba(255, 255, 255, 0.2) 50%,
+        rgba(255, 255, 255, 0.2) 75%,
+        transparent 75%,
+        transparent
+    );
+}
+.small-scrollbar::-webkit-scrollbar {
+    width: 0px;
+    background: #f3f4f6;
+}
+
+.small-scrollbar::-webkit-scrollbar-track {
+    background: #f3f4f6;
+}
+
+.small-scrollbar::-webkit-scrollbar-thumb {
+    background-color: #f3f4f6;
+    border-radius: 10px;
+    border: 3px solid #4df750;
+}
+/* scrollbar css  */
+
+/* search box css  */
+#search-box.show {
+    opacity: 1;
+    visibility: visible;
+    transition: 0.3s;
+}
+#search-box {
+    opacity: 0;
+    visibility: hidden;
+    transition: 0.3s;
+}
+/* search box css  */
+
+/* ---------------------------- owl carousel css starts ---------------------------- */
+.owl-carousel.head > .owl-dots {
+    position: absolute;
+    width: 100%;
+    left: 0;
+    bottom: 10px;
+    z-index: 99;
+    position: absolute;
+    padding: 5px;
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    bottom: 19px;
+}
+.owl-carousel.head > .owl-dots .owl-dot {
+    width: 16px;
+    height: 16px;
+    background: #797979;
+    border-radius: 50%;
+    margin: 5px;
+}
+.owl-carousel.head > .owl-dots .owl-dot.active {
+    background: #fff;
+}
+/* ---------------------------- owl carousel css ends ---------------------------- */
+
+.text-limit {
+    overflow: hidden;
+    text-overflow: ellipsis;
+    display: -webkit-box;
+    -webkit-line-clamp: 2; /* Change the number to set a different maximum number of lines */
+    -webkit-box-orient: vertical;
+}
+.text-limit-4 {
+    overflow: hidden;
+    text-overflow: ellipsis;
+    display: -webkit-box;
+    -webkit-line-clamp: 4; /* Change the number to set a different maximum number of lines */
+    -webkit-box-orient: vertical;
+}
+
+/* --------------------------- heading css starts --------------------------- */
+
+.heading::after {
+    content: "";
+    height: 3px;
+    width: 6%;
+    bottom: 0;
+    left: 50%;
+    /* position: absolute; */
+    display: inline-block;
+    background-color: #60ad56;
+    /* background-color: ; */
+    border-radius: 5px;
+}
+
+/* --------------------------- heading css ends --------------------------- */
+
+/* --------------------------- single-category hom page css ends --------------------------- */
+
+#single-category > span {
+    bottom: -60px;
+    transition: 0.2s;
+    transition-timing-function: ease-in-out;
+}
+#single-category:hover > span {
+    bottom: 0;
+}
+#single-category > #img {
+    transition: 0.2s;
+}
+#single-category:hover > #img {
+    transform: scale(1.15) rotate(5deg);
+}
+/* --------------------------- single-category hom page css ends --------------------------- */
+
+/* products css  starts*/
+.product-item {
+    border: 1px solid rgb(215, 214, 214);
+    overflow: hidden;
+}
+.product-item > .icon-group {
+    opacity: 0;
+}
+.product-item:hover > .icon-group {
+    opacity: 1;
+}
+.product-item > .icon-group .icon {
+    position: relative;
+    box-shadow: rgba(0, 0, 0, 0.1) 0px 0px 5px 0px,
+        rgba(0, 0, 0, 0.1) 0px 0px 1px 0px;
+}
+
+.product-item > .icon-group .icon:nth-child(1) {
+    right: -5px;
+    transition: 0.2s;
+}
+.product-item > .icon-group .icon:nth-child(2) {
+    right: -60px;
+    transition: 0.5s;
+}
+.product-item > .icon-group .icon:nth-child(3) {
+    right: -100px;
+    transition: 0.8s;
+}
+.product-item:hover > .icon-group .icon {
+    right: 30px;
+}
+#productModal {
+    box-shadow: rgba(100, 100, 111, 0.2) 0px 7px 29px 0px;
+}
+
+/* --------------------------- single product  css starts --------------------------- */
+.product-modal .owl-dots {
+    display: flex;
+    justify-content: center;
+}
+.product-modal .owl-dots .owl-dot {
+    width: 8px;
+    height: 8px;
+    outline: 5px solid transparent;
+
+    background: rgb(186, 184, 184);
+    border-radius: 50%;
+    margin: 0 5px;
+}
+.product-modal .owl-dots .owl-dot.active {
+    background: #e8b639;
+    outline: 5px solid #e8b639;
+}
+
+.optionList li {
+    position: relative;
+}
+.optionList li::after {
+    content: "";
+    position: absolute;
+    width: 0px;
+    height: 4px;
+    bottom: 0;
+    left: 0px;
+    background-color: transparent;
+    transition: 0.5s;
+}
+.optionList li.active::after {
+    width: 26px;
+    background-color: red;
+}
+/* --------------------------- single product  css ends --------------------------- */
+
+/* --------------------------- news css starts --------------------------- */
+.single-news:hover img {
+    transform: rotate(3deg) scale(1.1);
+}
+
+/* --------------------------- news css ends --------------------------- */
