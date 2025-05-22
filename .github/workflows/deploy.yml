@@ -1,0 +1,35 @@
+name: Deploy Laravel App to cPanel (FTP)
+
+on:
+  push:
+    branches:
+      - master  # Change to your branch name if different
+
+jobs:
+  ftp-deploy:
+    name: FTP Upload to cPanel
+    runs-on: ubuntu-latest
+
+    steps:
+    - name: Checkout Code
+      uses: actions/checkout@v3
+
+    - name: Install Composer Dependencies (production only)
+      run: |
+        composer install --no-dev --optimize-autoloader
+
+    - name: FTP Deploy
+      uses: SamKirkland/FTP-Deploy-Action@v4.3.4
+      with:
+        server: ${{ secrets.CPANEL_FTP_SERVER }}
+        username: ${{ secrets.CPANEL_FTP_USER }}
+        password: ${{ secrets.CPANEL_FTP_PASSWORD }}
+        server-dir: /public_html/   # Change if your Laravel app is in a subfolder
+        local-dir: ./               # Laravel root
+        exclude: |
+          **/.git*
+          **/node_modules/**
+          **/tests/**
+          **/.github/**
+          **/storage/**
+          **/vendor/**
