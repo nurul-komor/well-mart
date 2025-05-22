@@ -1,0 +1,60 @@
+# Laravel core
+/vendor
+/node_modules
+/public/storage
+/storage/*.key
+
+# Environment files
+.env
+.env.*.backup
+.env.backup
+.env.example.local
+
+# IDEs and editors
+.idea/
+.vscode/
+*.sublime-project
+*.sublime-workspace
+
+# OS-specific
+.DS_Store
+Thumbs.db
+
+# Composer and NPM debug
+composer.lock
+npm-debug.log
+yarn-error.log
+
+# Laravel specific
+/storage/app/*
+/storage/framework/cache/*
+/storage/framework/sessions/*
+/storage/framework/testing/*
+/storage/framework/views/*
+/storage/logs/*
+
+!storage/.gitignore
+!storage/app/.gitignore
+!storage/framework/.gitignore
+!storage/framework/cache/.gitignore
+!storage/framework/sessions/.gitignore
+!storage/framework/testing/.gitignore
+!storage/framework/views/.gitignore
+!storage/logs/.gitignore
+/public/storage
+
+# Coverage reports
+coverage/
+.phpunit.result.cache
+
+# Backup and archive files
+*.bak
+*.tmp
+*.swp
+*.zip
+*.tar.gz
+
+# Deployment files
+.env.production
+.env.local
+.env.staging
