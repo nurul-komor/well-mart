@@ -17,7 +17,7 @@ jobs:
     - name: Install Composer Dependencies (production only)
       run: |
         composer install --no-dev --optimize-autoloader
-        php artisan migrate --seed
+        # php artisan migrate --seed
 
     - name: FTP Deploy
       uses: SamKirkland/FTP-Deploy-Action@v4.3.4
