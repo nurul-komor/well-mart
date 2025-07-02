@@ -16,9 +16,7 @@
         integrity="sha512-tS3S5qG0BlhnQROyJXvNjeEM4UpMXHrQfTGmbQ1gKmelCxlSEBUaxhRBj/EFTzpbP4RVSrpEikbmdJobCvhE3g=="
         crossorigin="anonymous" referrerpolicy="no-referrer" />
     <!-- Scripts -->
-    {{-- @vite(['resources/css/app.css', 'resources/js/app.js']) --}}
-    <link rel="stylesheet" href="{{ asset('build/assets/app-0cca5b92.css') }}">
-    <script src="{{ asset('build/assets/app-b5a11a08.js') }}"></script>
+    @include('common.components.build-assets')
 </head>
 
 <body class="font-body antialiased">
