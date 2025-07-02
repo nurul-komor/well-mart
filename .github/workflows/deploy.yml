@@ -4,7 +4,6 @@ on:
   push:
     branches:
       - master  # Change to your branch name if different
-
 jobs:
   ftp-deploy:
     name: FTP Upload to cPanel
