@@ -10,7 +10,6 @@ module.exports = {
         "./resources/**/*.vue",
         // "./node_modules/tw-elements/dist/js/**/*.js",
     ],
-
     presets: [],
 
     theme: {
